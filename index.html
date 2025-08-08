@@ -1,33 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uchechi Beauty Wig's Store</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uchechi Beauty Wig’s Store</title>
+  <meta name="description" content="Luxury wigs, shoes, bags and fashion accessories from Uchechi Beauty Wig’s Store. We ship worldwide.">
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Uchechi Beauty Wig's Store</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="logo"></span> <span>Uchechi Beauty Wig’s Store</span></div>
+    <div class="actions">
+      <a href="https://instagram.com/uchechi_beauty_wigstore" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/uchechi.beauty01" target="_blank" rel="noopener">Facebook</a>
+      <a href="/admin" style="margin-left:16px">Admin</a>
+    </div>
+  </div>
+</header>
 
-    <section class="hero">
-        <h2>Luxury Wigs, Shoes, Bags & More</h2>
-        <p>Worldwide shipping – Nigeria, Ghana, USA, UK & beyond!</p>
+<main class="container">
+  <section class="hero">
+    <h1>Shop luxury Wigs, Shoes & Bags</h1>
+    <p class="lead">Secure site • Worldwide shipping • WhatsApp orders</p>
+
+    <div class="banner">
+      <b>How to add products:</b> Open <a href="/admin">/admin</a> → Products → “New Product”. 
+      <small class="hint">If /admin asks to enable Identity, see the quick steps below.</small>
+    </div>
+
+    <div class="search">
+      <input id="q" placeholder="Search products (e.g. 30&quot; wig, shoes 44, bag)">
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="wigs">Wigs</button>
+      <button class="filter-btn" data-filter="shoes">Shoes</button>
+      <button class="filter-btn" data-filter="bags">Bags</button>
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <section style="margin-top:22px">
+      <h2>How to log in to Admin (first time)</h2>
+      <ol>
+        <li>In Netlify, go to <b>Site settings → Identity</b> and click <b>Enable Identity</b>.</li>
+        <li>In Identity settings, click <b>Invite users</b> and invite your email (same as Netlify).</li>
+        <li>Open your email and accept the invitation → set a password.</li>
+        <li>Visit <b>/admin</b> and log in. You can now add products any time.</li>
+      </ol>
     </section>
+  </section>
 
-    <footer>
-        <p>📞 +2349060135725 | 📧 patienceuco@gmail.com</p>
-        <p>Follow us on <a href="https://www.facebook.com/uchechi.beauty01" target="_blank">Facebook</a></p>
-        <p>&copy; 2025 Uchechi Beauty Wig's Store. All Rights Reserved.</p>
-    </footer>
+  <footer class="footer">
+    © <span id="year"></span> Uchechi Beauty Wig’s Store. All rights reserved.
+  </footer>
+</main>
+
+<a class="whatsapp-float" href="https://wa.me/2349060135725?text=Hello%20Uchechi%20Beauty%20Wig’s%20Store%20👋%20I’d%20like%20to%20order." target="_blank" aria-label="Chat on WhatsApp">WA</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="/assets/app.js" defer></script>
 </body>
 </html>
