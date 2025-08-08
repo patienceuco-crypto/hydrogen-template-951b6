@@ -1,0 +1,29 @@
+const products = [
+  { title:'30" 360 Lace Wig – Body Wave', price:'₦180,000', img:'https://placehold.co/600x400?text=30in+360+Lace+Wig', cat:'Wigs' },
+  { title:'Bob 13×4 T4/27/4 — 10"', price:'₦31,000', img:'https://placehold.co/600x400?text=Bob+13x4+10in', cat:'Wigs' },
+  { title:'13×4 Wig — 16"', price:'₦98,000', img:'https://placehold.co/600x400?text=16in+13x4', cat:'Wigs' },
+  { title:'13×4 Wig — 18"', price:'₦116,000', img:'https://placehold.co/600x400?text=18in+13x4', cat:'Wigs' },
+  { title:'13×4 Wig — 20"', price:'₦128,000', img:'https://placehold.co/600x400?text=20in+13x4', cat:'Wigs' },
+  { title:"Men’s Luxury Shoes (40–46)", price:'₦45,000', img:'https://placehold.co/600x400?text=Mens+Shoes+40-46', cat:'Shoes' },
+  { title:'Colorful Luxury Shoes (37–44)', price:'₦49,000', img:'https://placehold.co/600x400?text=Shoes+37-44', cat:'Shoes' },
+  { title:'Matching Purse', price:'₦71,000', img:'https://placehold.co/600x400?text=Matching+Purse', cat:'Bags' },
+  { title:'Full Set (Shoes + Purse)', price:'₦120,000', img:'https://placehold.co/600x400?text=Full+Set', cat:'Bags' },
+];
+
+function render(){
+  const grid=document.getElementById('grid'); grid.innerHTML='';
+  products.forEach(p=>{
+    const el=document.createElement('div'); el.className='card';
+    el.innerHTML=`<img src="${p.img}" alt="${p.title}">
+      <div class="pad">
+        <div class="badge">${p.cat}</div>
+        <div style="font-weight:800">${p.title}</div>
+        <div class="price">${p.price}</div>
+        <a class="cta" target="_blank"
+           href="https://wa.me/2349060135725?text=${encodeURIComponent('Hello! I want to order: '+p.title)}">
+           Order on WhatsApp</a>
+      </div>`;
+    grid.appendChild(el);
+  });
+}
+document.addEventListener('DOMContentLoaded',render);
