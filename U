@@ -1,0 +1,22 @@
+const products=[
+  {title:'30" Body Wave 360 Lace Wig',price:'₦180,000',img:'https://placehold.co/600x400/0b0b0d/EEE?text=30in+Lace+Wig',cat:'Wigs'},
+  {title:"Men’s Luxury Shoes",price:'₦45,000',img:'https://placehold.co/600x400/0b0b0d/EEE?text=Luxury+Shoes',cat:'Shoes'},
+  {title:'Luxury Handbag – Gold',price:'₦71,000',img:'https://placehold.co/600x400/0b0b0d/EEE?text=Gold+Bag',cat:'Bags'}
+];
+function render(){
+  const grid=document.getElementById('grid'); grid.innerHTML='';
+  products.forEach(p=>{
+    const el=document.createElement('div'); el.className='card';
+    el.innerHTML=`<img src="${p.img}" alt="${p.title}">
+      <div class="pad">
+        <div class="badge">${p.cat}</div>
+        <div style="font-weight:800">${p.title}</div>
+        <div class="price">${p.price}</div>
+        <a class="cta" target="_blank"
+           href="https://wa.me/2349060135725?text=${encodeURIComponent('Hello! I want to order: '+p.title)}">
+           Order on WhatsApp</a>
+      </div>`;
+    grid.appendChild(el);
+  });
+}
+document.addEventListener('DOMContentLoaded',render);
